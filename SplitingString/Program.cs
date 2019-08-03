@@ -22,7 +22,7 @@ namespace SplitingString
                 Console.WriteLine(e.Message);
             }
 
-            string[] configurableFields = Regex.Split("I Love Bangladesh,I hate politics.Test", ",|\\.");
+            string[] configurableFields = Regex.Split("I Love Bangladesh,I hate politics.Testing!", ",|\\.");
             foreach (var a in configurableFields)
             {
                 Console.WriteLine(a);
