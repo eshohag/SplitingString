@@ -9,9 +9,17 @@ namespace SplitingString
         {
             string value = "1,2,3";
             var tranMedia = value.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string s in tranMedia)
+
+            try
             {
-                Console.WriteLine(Convert.ToInt32(s));
+                foreach (string s in tranMedia)
+                {
+                    Console.WriteLine(Convert.ToInt32(s));
+                }
+            }
+            catch (InvalidCastException e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             string[] configurableFields = Regex.Split("I Love Bangladesh,I hate politics.Test", ",|\\.");
